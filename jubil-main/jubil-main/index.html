@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на 50-летие в гангстерском стиле</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0c0c0c;
+            color: #e0c9a6;
+            line-height: 1.6;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23222" stroke-width="1"/></svg>');
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(to bottom, #1a1a1a, #0c0c0c);
+            border: 5px solid #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header {
+            background-color: #8b0000;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #d4af37;
+            position: relative;
+        }
+        
+        .header::before, .header::after {
+            content: "";
+            position: absolute;
+            height: 10px;
+            width: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                #d4af37,
+                #d4af37 10px,
+                #8b0000 10px,
+                #8b0000 20px
+            );
+            left: 0;
+        }
+        
+        .header::before {
+            top: 0;
+        }
+        
+        .header::after {
+            bottom: -5px;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-style: italic;
+            color: #e0c9a6;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 30px;
+            position: relative;
+        }
+        
+        .pinstripes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 3px,
+                rgba(212, 175, 55, 0.05) 3px,
+                rgba(212, 175, 55, 0.05) 6px
+            );
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .invitation-text {
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .invitation-text p {
+            margin-bottom: 15px;
+        }
+        
+        .details {
+            background-color: rgba(139, 0, 0, 0.2);
+            border-left: 4px solid #d4af37;
+            padding: 20px;
+            margin: 25px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .details p {
+            margin-bottom: 10px;
+            display: flex;
+        }
+        
+        .details strong {
+            color: #d4af37;
+            min-width: 120px;
+            display: inline-block;
+        }
+        
+        .decoration {
+            text-align: center;
+            margin: 25px 0;
+            font-size: 2rem;
+            color: #d4af37;
+        }
+        
+        .form-container {
+            background-color: rgba(26, 26, 26, 0.8);
+            border: 2px solid #d4af37;
+            padding: 25px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .form-title {
+            text-align: center;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #e0c9a6;
+            font-weight: 300;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: rgba(20, 20, 20, 0.8);
+            border: 1px solid #d4af37;
+            color: #e0c9a6;
+            border-radius: 3px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        button {
+            background: linear-gradient(to bottom, #d4af37, #b8860b);
+            color: #1a1a1a;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 3px;
+            width: 100%;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        button:hover {
+            background: linear-gradient(to bottom, #b8860b, #d4af37);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .signature {
+            text-align: right;
+            margin-top: 40px;
+            font-style: italic;
+            color: #d4af37;
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .gangster-icon {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 20px 0;
+            color: #d4af37;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-top: 2px solid #d4af37;
+            font-size: 0.9rem;
+            color: #e0c9a6;
+        }
+        
+        .tommy-gun {
+            position: absolute;
+            opacity: 0.03;
+            font-size: 15rem;
+            transform: rotate(15deg);
+            z-index: 0;
+        }
+        
+        .tommy-left {
+            left: -50px;
+            top: 200px;
+        }
+        
+        .tommy-right {
+            right: -50px;
+            bottom: 200px;
+            transform: rotate(-15deg);
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .details p {
+                flex-direction: column;
+            }
+            
+            .details strong {
+                margin-bottom: 5px;
+            }
+            
+            .tommy-gun {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>50-летний юбилей</h1>
+            <div class="subtitle">Гангстерская вечеринка</div>
+        </div>
+        
+        <div class="content">
+            <div class="pinstripes"></div>
+            <div class="tommy-gun tommy-left">🔫</div>
+            <div class="tommy-gun tommy-right">🔫</div>
+            
+            <div class="invitation-text">
+                <p>Дорогие друзья!</p>
+                
+                <p>Приглашаю вас на грандиозное торжество в честь моего 50-летия!</p>
+                
+                <div class="gangster-icon">🎩</div>
+                
+                <div class="details">
+                    <p><strong>Дресс-код:</strong> Гангстерский стиль</p>
+                    <p><strong>Дата:</strong> 28 сентября 2025 года</p>
+                    <p><strong>Время:</strong> 15:00</p>
+                    <p><strong>Место:</strong> Ресторан-кабаре "Карабас Барабас"</p>
+                    <p><strong>Адрес:</strong> ул. Толстого, 23, Улан-Удэ</p>
+                </div>
+                
+                <p>Жду каждого из вас на этом особенном празднике! Подготовьте свои лучшие костюмы в стиле чикагских гангстеров 20-х годов - будет незабываемо!</p>
+                
+                <div class="gangster-icon">🍾</div>
+                
+                <p>Просьба подтвердить свое участие до <strong>15 сентября 2025 года</strong>, чтобы я могла организовать все на высшем уровне!</p>
+            </div>
+            
+            <div class="form-container">
+                <h2 class="form-title">ПОДТВЕРДИТЕ УЧАСТИЕ</h2>
+                
+                <form id="rsvp-form">
+                    <div class="form-group">
+                        <label for="name">Ваше ФИО *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Контактный телефон *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="attendance">Вы придёте? *</label>
+                        <select id="attendance" name="attendance" required>
+                            <option value="">Выберите вариант</option>
+                            <option value="yes">Да, я буду!</option>
+                            <option value="no">К сожалению, не смогу</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="plus-one-group" style="display: none;">
+                        <label for="plus-one">Берёте с собой +1?</label>
+                        <select id="plus-one" name="plus-one">
+                            <option value="no">Нет</option>
+                            <option value="yes">Да</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="plus-one-name-group" style="display: none;">
+                        <label for="plus-one-name">Имя вашего +1</label>
+                        <input type="text" id="plus-one-name" name="plus-one-name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Ваши пожелания или комментарии</label>
+                        <textarea id="message" name="message" rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit">ОТПРАВИТЬ ОТВЕТ</button>
+                </form>
+            </div>
+            
+            <div class="signature">
+                Ваша Надежда!
+            </div>
+        </div>
+        
+        <div class="footer">
+            © 2025 Гангстерская вечеринка в честь 50-летия
+        </div>
+    </div>
+    
+    <script>
+        // Показываем/скрываем поле +1
+        document.getElementById('attendance').addEventListener('change', function() {
+            const plusOneGroup = document.getElementById('plus-one-group');
+            if (this.value === 'yes') {
+                plusOneGroup.style.display = 'block';
+            } else {
+                plusOneGroup.style.display = 'none';
+                document.getElementById('plus-one-name-group').style.display = 'none';
+            }
+        });
+        
+        // Показываем поле для имени +1
+        document.getElementById('plus-one').addEventListener('change', function() {
+            const plusOneNameGroup = document.getElementById('plus-one-name-group');
+            plusOneNameGroup.style.display = this.value === 'yes' ? 'block' : 'none';
+        });
+        
+        // Обработка отправки формы
+        document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Получаем данные формы
+            const formData = {
+                Name: document.getElementById('name').value.trim(),
+                Phone: document.getElementById('phone').value.trim(),
+                Attendance: document.getElementById('attendance').value,
+                PlusOne: document.getElementById('plus-one').value,
+                PlusOneName: document.getElementById('plus-one-name').value.trim() || '',
+                Message: document.getElementById('message').value.trim() || ''
+            };
+            
+            // ВАЖНО: Замените этот URL на ваш URL веб-приложения из Apps Script
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzVcAV4cvwf1p-FLBvx9kTvlmiqpnBMZ5Hq6Mo60ypLbMeb-jRb7hN_Brlw-RFGjezM/exec";
+            
+            try {
+                // Отправляем данные
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams(formData).toString()
+                });
+                
+                if (!response.ok) throw new Error('Ошибка сети');
+                
+                const result = await response.json();
+                if (result.result === 'success') {
+                    alert('Спасибо! Ваш ответ сохранён.');
+                    this.reset();
+                    document.getElementById('plus-one-group').style.display = 'none';
+                    document.getElementById('plus-one-name-group').style.display = 'none';
+                } else {
+                    throw new Error(result.error || 'Неизвестная ошибка');
+                }
+            } catch (error) {
+                console.error('Ошибка:', error);
+                alert('Произошла ошибка при отправке. Пожалуйста, попробуйте ещё раз.');
+            }
+        });
+    </script>
+</body>
+</html>
